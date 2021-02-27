@@ -1,5 +1,7 @@
 # Fidelity Portfolio Review
 
+**This is the readme from the main branch, and has not been updated to reflect this version of the project. Changes have been made to the 'Ideas for Future Versions' section to reflect the goals of this branch.**
+
 This application is intended to automate a lot of the manual data-entry I would do when periodically reviewing my Fidelity portfolio. The application takes the portfolio information as exported from Fidelity's website saved as an excel document and acquires additional information for each security, such as P/E Ratio, Recognia Technical Analysis, Institutional Ownership, and more.
 
 This application does not constitute investment or financial advice. This application was made for the sole purpose of automating manual data-entry that I would do periodically. Please consult a qualified financial professional for investment or financial advice. 
@@ -41,11 +43,13 @@ https://rapidapi.com/apidojo/api/fidelity-investments
 
 ## Ideas for future versions
 
-Instead of requiring a .xlsx file to read from for the source portfolio, use the .csv format that Fidelity provides when downloading portfolio information.
+This goal of this branch is to implement the following changes:
 
-Alphabetically sort the source portfolio to save the user from having to use a program like Excel to do this on their own.
-
-Find a way to get Fidelity's "Fundamental Analysis" values such as Growth Stability and Financial Health, which are not included in the get-mashup API call at this time (as of 12/01/2020).
+- Utilize Selenium webdriver to gather information, rather than using the Fidelity Investments API hosted by rapidAPI.
+- Run in a Jupyter notebook as opposed to an automated script.
+- Allow the user to begin with the .csv file of their account information from Fidelity without any formatting necessary.
+- Make a new copy with the datetime added to the file name of the target workbook.
+- Add additional information, such as price targets, possibly by using a library such as yfinance.
 
 ## License
 
