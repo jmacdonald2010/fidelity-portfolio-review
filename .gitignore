@@ -2,3 +2,4 @@
 selenium_tests.ipynb
 /.vscode
 geckodriver.log
+/logs
