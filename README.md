@@ -2,6 +2,8 @@
 
 **This is the readme from the main branch, and has not been updated to reflect this version of the project. Changes have been made to the 'Ideas for Future Versions' section to reflect the goals of this branch.**
 
+**At this time, the fidelity_portfolio_review.ipynb is being used to test data extraction using selenium. The Fidelity_Portfolio_Review.py file is the target for the final version of the project. The Stock.py file may not end up being used.**
+
 This application is intended to automate a lot of the manual data-entry I would do when periodically reviewing my Fidelity portfolio. The application takes the portfolio information as exported from Fidelity's website saved as an excel document and acquires additional information for each security, such as P/E Ratio, Recognia Technical Analysis, Institutional Ownership, and more.
 
 This application does not constitute investment or financial advice. This application was made for the sole purpose of automating manual data-entry that I would do periodically. Please consult a qualified financial professional for investment or financial advice. 

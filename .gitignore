@@ -3,3 +3,7 @@ selenium_tests.ipynb
 /.vscode
 geckodriver.log
 /logs
+test_data.csv
+~$target_workbook.xlsx
+/autogen-workbooks
+.DS_Store
