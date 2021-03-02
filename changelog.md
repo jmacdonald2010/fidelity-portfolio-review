@@ -4,6 +4,26 @@
 
 This is the changelog for the in-progress branch for a new version of the fidelity portfolio review script. In this version, instead of relying on the Fidelity Investments rapidAPI, it will instead use the selenium webdriver to gather information directly from the website. By using Selenium to automate the browser, users can safely and easily log in to the site, and the script can easily acquire the necessary information. See the 'Ideas for Future Versions' section of the readme for planned implementations.
 
+#### 03/01/2021 22:05
+Commit/Push for a lot of progress done before making bigger changes. Following progress was made:
+
+- Extract necessary data (see exceptions below)
+- Reduce redundancy in code.
+    - Mainly applies to the extraction of recognia technical analysis data.
+
+The following decisions have been made:
+
+- Final project will be in the form of a jupyter notebook
+- Not using institutional ownership as a metric, as I haven't used it too much in decision making recently.
+
+The following still needs to be done:
+
+- Configure new recognia technical analysis code block to work for ETFs
+- Remove institutional ownership from target_workbook.xlsx, dataframe.
+- Add code to use yfinance to gather price target data.
+- Assemble final notebook and test.
+
+
 #### 02/28/2021 22:36
 Last commit/push prior to end of night. Working on creating the file to run as one whole script. Goal is to accomplish the following:
 
