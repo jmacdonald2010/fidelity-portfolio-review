@@ -4,6 +4,15 @@
 
 This is the changelog for the in-progress branch for a new version of the fidelity portfolio review script. In this version, instead of relying on the Fidelity Investments rapidAPI, it will instead use the selenium webdriver to gather information directly from the website. By using Selenium to automate the browser, users can safely and easily log in to the site, and the script can easily acquire the necessary information. See the 'Ideas for Future Versions' section of the readme for planned implementations.
 
+#### 03/02/2021 09:$0
+Test notebook has what I think is everything I need to begin compiling the final notebook. Following changes/additions were made:
+
+- Remove instituation ownership from dataframe, excel document.
+- Add a method to get 1-Yr price targets from YF (not using yfinance, as this stat is not available)
+- Not yet tested, but determined a way to get recognia data for ETFs in a more efficient, less repetitive manner.
+- Added price target to excel document, dataframe
+- Added Debt/Equity stats to excel, dataframe, added extraction method.
+
 #### 03/01/2021 22:05
 Commit/Push for a lot of progress done before making bigger changes. Following progress was made:
 
