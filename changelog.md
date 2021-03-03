@@ -4,6 +4,26 @@
 
 This is the changelog for the in-progress branch for a new version of the fidelity portfolio review script. In this version, instead of relying on the Fidelity Investments rapidAPI, it will instead use the selenium webdriver to gather information directly from the website. By using Selenium to automate the browser, users can safely and easily log in to the site, and the script can easily acquire the necessary information. See the 'Ideas for Future Versions' section of the readme for planned implementations.
 
+#### 03/03/2021 09:37
+Working on compiling the final notebook. Placing all of the functions used to get data in a separate file in order to keep the code cleaner. Unsure of how well these functions will take to having the driver as a function parameter. Code has not been tested yet.
+
+What has been done:
+
+- Moving working code into the extract.py file as functions.
+- Set up most of the first cell in the notebook, which sets everything up.
+
+What needs to be done:
+
+- Complete the first cell
+    - Need to add in the browser launch and data copying to a new excel file.
+- Finish copying functions into the extract.py file
+    - Need the following copied over still:
+        - 52-Week performance for stocks
+        - Anything for ETFs (except recognia analysis)
+        - Anything for Mutual Funds
+- Write code blocks that run the functions and copy the data.
+- ReadMe documentation in notebook.
+
 #### 03/02/2021 09:$0
 Test notebook has what I think is everything I need to begin compiling the final notebook. Following changes/additions were made:
 
