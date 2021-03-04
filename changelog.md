@@ -4,6 +4,13 @@
 
 This is the changelog for the in-progress branch for a new version of the fidelity portfolio review script. In this version, instead of relying on the Fidelity Investments rapidAPI, it will instead use the selenium webdriver to gather information directly from the website. By using Selenium to automate the browser, users can safely and easily log in to the site, and the script can easily acquire the necessary information. See the 'Ideas for Future Versions' section of the readme for planned implementations.
 
+#### 03/04/2021 09:43
+Started working on the notebook. Have decided to make some changes for the final notebook:
+
+- Keep data in dataframe for later processing in notebook (visualizing).
+- Perform conditional formatting using openpyxl, instead of using a template excel file.
+- At the end of the project, upload an example notebook, full of graphs, etc. that shows some example analyses of the data.
+
 #### 03/04/2021 08:57
 Functions have been tested in the sketches notebook. Starting to assemble everything in the actual notebook.
 
