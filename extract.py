@@ -21,7 +21,7 @@ def determine_security_type(driver):
             return sec_type
     try:
         sec_type = sec_type.text
-        print(sec_type)
+        # print(sec_type)
     except AttributeError:
         pass
     sec_type.strip("»")
@@ -55,7 +55,7 @@ def stock_equity_sum_score(driver):
 
 # Recognia Analysis
 def recognia_analysis(driver, sec_type):
-    if sec_type == 'Stock':
+    if sec_type == 'Stocks':
         recognia_fixed_dict = {
             'Recognia Short Term': '/html/body/div[3]/div[2]/div[1]/div[11]/div/div/div/div/section/div/div[1]/div[2]',
             'Recognia Intermediate Term': '/html/body/div[3]/div[2]/div[1]/div[11]/div/div/div/div/section/div/div[2]',
@@ -116,13 +116,23 @@ def stock_financial_health(driver):
 # 1-Yr Estimate (Stock)
 def stock_one_yr_price_target(driver, symbol):
     driver.switch_to_window(driver.window_handles[1])
-    driver.get(f'https://finance.yahoo.com/quote/{symbol}?p={symbol}&.tsrc=fin-srch')
+    driver.get(f'https://finance.yahoo.com/quote/{symbol}?p={symbold}&.tsrc=fin-srch')
     time.sleep(5)   # I don't think this will need automated scrolling down the page, not sure though.
-    price_target = driver.find_elements_by_xpath('/html/body/div[1]/div/div/div[1]/div/div[3]/div[1]/div/div[1]/div/div/div/div[2]/div[2]/table/tbody/tr[8]/td[2]/span')
+    price_target = driver.find_elements_by_id('quote-summary')
+    price_target = price_target[0].text.splitlines()
+    price_target
+    for stat in price_target:
+        if '1y Target' in stat:
+            stat = stat.split()
+            for x in stat:
+                if '.' in x:
+                    price_target = float(x)
+                    break
+    time.sleep(5)
     other_window = driver.window_handles[0] # switches back to the first open window (fidelity)
     # other_window
     driver.switch_to.window(window_name=other_window)
-    return float(price_target[0].text)
+    return price_target
 
 # key stats, including debt
 # call this last, even though there are columns in the excel table after this
@@ -155,7 +165,7 @@ def stock_key_stats(driver, symbol):
                 x = data.split()
                 for y in x:
                     if '.' in y:
-                        stats_dict[y] = float(y)
+                        stats_dict[stat] = float(y)
                         break
     
     # now, debt information extraction
