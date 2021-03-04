@@ -116,7 +116,7 @@ def stock_financial_health(driver):
 # 1-Yr Estimate (Stock)
 def stock_one_yr_price_target(driver, symbol):
     driver.switch_to_window(driver.window_handles[1])
-    driver.get(f'https://finance.yahoo.com/quote/{symbol}?p={symbold}&.tsrc=fin-srch')
+    driver.get(f'https://finance.yahoo.com/quote/{symbol}?p={symbol}&.tsrc=fin-srch')
     time.sleep(5)   # I don't think this will need automated scrolling down the page, not sure though.
     price_target = driver.find_elements_by_id('quote-summary')
     price_target = price_target[0].text.splitlines()
