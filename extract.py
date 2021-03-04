@@ -175,3 +175,45 @@ def stock_key_stats(driver, symbol):
                         break
 
     return stats_dict, debt_dict
+
+# Extract 52 Week Performance for Stocks
+def stock_52_week_perf(driver):
+    fifty_two_week = driver.find_elements_by_id('box14')
+    ftw_perf = fifty_two_week[0].text.splitlines()
+    return float(ftw_perf[1].strip('+').strip('%'))
+
+# ETF-Specific Functions
+
+# ETF Key Stats
+def etf_key_stats(driver):
+    # I copied this straight from the sketches notebook, so I imagine it should work
+    etf_stats = ('Price / Earnings (TTM)', 'Price / Book', 'Price / Sales', 'Price / Cash Flow', 'Distribution Yield')
+
+    key_stats = driver.find_elements_by_id('keyStatistics-equity-data-table')
+    key_stats = key_stats[0].text.splitlines()
+
+    etf_stats_dict = dict()
+    for x in range(len(key_stats)):
+        for y in etf_stats:
+            if y in key_stats[x]:
+                if 'Distribution Yield' in key_stats[x]:
+                    etf_stats_dict['etf_distribution_yield'] = float(key_stats[x + 2].strip('%'))
+                else:
+                    etf_stats_dict[y] = float(key_stats[x + 1])
+
+    return etf_stats_dict
+
+# 52-Week Performance
+def etf_52_week_perf(driver):
+    ftwk_perf_etf = driver.find_elements_by_id('box14etf')
+    ftwk_perf_etf = ftwk_perf_etf[0].text.splitlines()
+    ftwk_perf_etf = ftwk_perf_etf[1].strip('+').strip('%')
+    return ftwk_perf_etf
+
+# Mutual Fund-Specific Functions
+
+# 52-Week Performance
+def mf_52_week_perf(driver):
+    mf_ftwk_perf = driver.find_elements_by_xpath('/html/body/div[3]/div/div/div/div[1]/div[2]/performance-template/div/div[2]/div/div/div[2]/div[1]/p[2]')
+    mf_ftwk_perf = float(mf_ftwk_perf[0].text.strip('+').strip('%'))
+    return mf_ftwk_perf
