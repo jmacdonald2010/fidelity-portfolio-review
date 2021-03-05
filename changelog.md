@@ -4,6 +4,14 @@
 
 This is the changelog for the in-progress branch for a new version of the fidelity portfolio review script. In this version, instead of relying on the Fidelity Investments rapidAPI, it will instead use the selenium webdriver to gather information directly from the website. By using Selenium to automate the browser, users can safely and easily log in to the site, and the script can easily acquire the necessary information. See the 'Ideas for Future Versions' section of the readme for planned implementations.
 
+#### 03/04/2021 22:59
+Made significant progress on the notebook. Fixed issues with creating the initial dataframe. Cell for data extraction has been written but not yet tested. Once the extraction block has been successfully tested, conditional formatting will be added.
+
+The following either still needs done or likely will need to be done:
+
+- Error/exception handling for missing values (e.g. a non-existant P/E ratio, etc.)
+- Conditional Formatting
+
 #### 03/04/2021 09:43
 Started working on the notebook. Have decided to make some changes for the final notebook:
 
