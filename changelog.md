@@ -4,6 +4,9 @@
 
 This is the changelog for the in-progress branch for a new version of the fidelity portfolio review script. In this version, instead of relying on the Fidelity Investments rapidAPI, it will instead use the selenium webdriver to gather information directly from the website. By using Selenium to automate the browser, users can safely and easily log in to the site, and the script can easily acquire the necessary information. See the 'Ideas for Future Versions' section of the readme for planned implementations.
 
+#### 03/05/2021 09:43
+Added in some try/except blocks in the extract.py file and through the extraction cell. These have not yet been tested. Testing is the next thing on the agenda.
+
 #### 03/05/2021 08:59
 Started testing the extraction block. Ran into the following issues:
 

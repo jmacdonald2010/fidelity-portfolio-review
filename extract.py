@@ -46,7 +46,10 @@ def stock_div_yield(driver):
             div_amt = float(item.strip('$'))
         if '%' in item:
             div_yield = float(item.strip('%'))
-    return div_amt, div_yield
+    try:
+        return div_amt, div_yield
+    except:
+        return 0, 0
 
 # Equity Summary Score
 def stock_equity_sum_score(driver):
@@ -120,7 +123,7 @@ def stock_one_yr_price_target(driver, symbol):
     time.sleep(5)   # I don't think this will need automated scrolling down the page, not sure though.
     price_target = driver.find_elements_by_id('quote-summary')
     price_target = price_target[0].text.splitlines()
-    price_target
+    # price_target
     for stat in price_target:
         if '1y Target' in stat:
             stat = stat.split()
@@ -132,7 +135,10 @@ def stock_one_yr_price_target(driver, symbol):
     other_window = driver.window_handles[0] # switches back to the first open window (fidelity)
     # other_window
     driver.switch_to.window(window_name=other_window)
-    return price_target
+    if isinstance(price_target, float): 
+        return price_target
+    else:
+        return np.nan
 
 # key stats, including debt
 # call this last, even though there are columns in the excel table after this
