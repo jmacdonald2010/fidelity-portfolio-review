@@ -4,6 +4,15 @@
 
 This is the changelog for the in-progress branch for a new version of the fidelity portfolio review script. In this version, instead of relying on the Fidelity Investments rapidAPI, it will instead use the selenium webdriver to gather information directly from the website. By using Selenium to automate the browser, users can safely and easily log in to the site, and the script can easily acquire the necessary information. See the 'Ideas for Future Versions' section of the readme for planned implementations.
 
+#### 03/05/2021 08:59
+Started testing the extraction block. Ran into the following issues:
+
+- Issue copying row data from previous symbols.
+    - Resolved.
+- Issue when certain statistics are not present (e.g. Dividends) that cause the program to crash.
+    - This was expected; I need to modify the extract.py file to provide exceptions for what to do when no information is found. 
+    - In addition to that, I think I also need to provide an exception to allow a security to be skipped entirely if it is problematic. A list should be created containing securities that caused issues that required them to be skipped.
+
 #### 03/04/2021 22:59
 Made significant progress on the notebook. Fixed issues with creating the initial dataframe. Cell for data extraction has been written but not yet tested. Once the extraction block has been successfully tested, conditional formatting will be added.
 
