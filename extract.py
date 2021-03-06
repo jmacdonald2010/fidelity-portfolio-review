@@ -206,7 +206,17 @@ def etf_key_stats(driver):
     etf_stats = ('Price / Earnings (TTM)', 'Price / Book', 'Price / Sales', 'Price / Cash Flow', 'Distribution Yield')
 
     key_stats = driver.find_elements_by_id('keyStatistics-equity-data-table')
-    key_stats = key_stats[0].text.splitlines()
+    try:
+        key_stats = key_stats[0].text.splitlines()
+    except IndexError:  # this may occur for fixed-income ETFs
+        etf_stats_dict = {
+            'Price / Earnings (TTM)': np.nan,
+            'Price / Book': np.nan,
+            'Price / Sales': np.nan,
+            'Price / Cash Flow': np.nan,
+            'Distribution Yield': np.nan,
+        }
+        return etf_stats_dict
 
     etf_stats_dict = dict()
     for x in range(len(key_stats)):
