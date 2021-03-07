@@ -64,7 +64,7 @@ def recognia_analysis(driver, sec_type):
             'Recognia Intermediate Term': '/html/body/div[3]/div[2]/div[1]/div[11]/div/div/div/div/section/div/div[2]',
             'Recognia Long Term': '/html/body/div[3]/div[2]/div[1]/div[11]/div/div/div/div/section/div/div[3]'
         }
-    elif sec_type == 'ETF':
+    elif sec_type == 'ETFs':
         recognia_fixed_dict = {
             'Recognia Short Term': '/html/body/div[3]/div[2]/div[1]/div[7]/div/div/div/div/section/div/div[1]',
             'Recognia Intermediate Term': '/html/body/div[3]/div[2]/div[1]/div[7]/div/div/div/div/section/div/div[2]',
@@ -188,6 +188,7 @@ def stock_key_stats(driver, symbol):
                 for text in x:
                     if '%' in text:
                         # text = text.strip(",")
+                        text = re.sub('[\$,]', '', text)
                         debt_dict[stat] = float(text.strip(",").strip('%'))
                         break
 
