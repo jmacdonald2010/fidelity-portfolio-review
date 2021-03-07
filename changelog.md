@@ -4,6 +4,9 @@
 
 This is the changelog for the in-progress branch for a new version of the fidelity portfolio review script. In this version, instead of relying on the Fidelity Investments rapidAPI, it will instead use the selenium webdriver to gather information directly from the website. By using Selenium to automate the browser, users can safely and easily log in to the site, and the script can easily acquire the necessary information. See the 'Ideas for Future Versions' section of the readme for planned implementations.
 
+#### 03/06/2021 21:58
+Started testing the actual extraction cell. Fixes have been added in wherever deemed necessary, but I'm currently running into an issue with the ETF stats extraction function, where it crashes on a ValueError if the P/E value in the ETF is '--'. For some reason, the error is located at the actual function call itself, and within the module, it occurs on the actual 'else' line, which I can't seem to figure out. Need to figure out how to carefully place this specific try/except statement. Will try to figure that out tomorrow.
+
 #### 03/06/2021 10:41
 Added in some code in the extraction cell to skip rows in the dataframe that are already full if the cell needs to be rerun. Also updated the etf key stats extraction function, because fixed-income ETFs do not have the same research page layouts as sector or index ETFs (this patch has not yet been tested.) Commit/Push prior to going to work.
 

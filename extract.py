@@ -171,7 +171,7 @@ def stock_key_stats(driver, symbol):
                 x = data.split()
                 for y in x:
                     if '.' in y:
-                        stats_dict[stat] = float(y)
+                        stats_dict[stat] = float(y.strip(','))
                         break
     
     # now, debt information extraction
@@ -187,7 +187,8 @@ def stock_key_stats(driver, symbol):
                 x = x.split()
                 for text in x:
                     if '%' in text:
-                        debt_dict[stat] = float(text.strip('%'))
+                        # text = text.strip(",")
+                        debt_dict[stat] = float(text.strip(",").strip('%'))
                         break
 
     return stats_dict, debt_dict
@@ -223,9 +224,12 @@ def etf_key_stats(driver):
         for y in etf_stats:
             if y in key_stats[x]:
                 if 'Distribution Yield' in key_stats[x]:
-                    etf_stats_dict['etf_distribution_yield'] = float(key_stats[x + 2].strip('%'))
+                    etf_stats_dict['etf_distribution_yield'] = float(key_stats[x + 2].strip('%').strip(','))
                 else:
-                    etf_stats_dict[y] = float(key_stats[x + 1])
+                    try:
+                        etf_stats_dict[y] = float(key_stats[x + 1])
+                    except ValueError:
+                        etf_stats_dict[y] = np.nan
 
     return etf_stats_dict
 
@@ -234,6 +238,10 @@ def etf_52_week_perf(driver):
     ftwk_perf_etf = driver.find_elements_by_id('box14etf')
     ftwk_perf_etf = ftwk_perf_etf[0].text.splitlines()
     ftwk_perf_etf = ftwk_perf_etf[1].strip('+').strip('%')
+    try:
+        ftwk_perf_etf = float(ftwk_perf_etf)
+    except ValueError:
+        ftwk_perf_etf = np.nan
     return ftwk_perf_etf
 
 # Mutual Fund-Specific Functions
