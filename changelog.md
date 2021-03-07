@@ -4,6 +4,9 @@
 
 This is the changelog for the in-progress branch for a new version of the fidelity portfolio review script. In this version, instead of relying on the Fidelity Investments rapidAPI, it will instead use the selenium webdriver to gather information directly from the website. By using Selenium to automate the browser, users can safely and easily log in to the site, and the script can easily acquire the necessary information. See the 'Ideas for Future Versions' section of the readme for planned implementations.
 
+#### 03/07/2021 17:32
+Added in the first cells to clean the data in the dataframe. This one converts the values that are provided in the source csv file and converts them to np.floats. Next, will be to check to see what duplicate symbols have missing values (perhaps just run the execution block a second time?) and fill them in from the rows where that symbol has complete values.
+
 #### 03/07/2021 14:32
 Data extraction cell ran through once completely. Need to verify the data in the second half of the file, as it seems some data is missing (some, it seems from the original csv file, and some from the webscraping). Planning on having the cell after data extraction to be data cleaning, then after that, adding in some conditional formatting to the excel document. Cells after that will be misc. data analysis, charting, etc.
 
