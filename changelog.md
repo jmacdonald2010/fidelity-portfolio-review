@@ -4,6 +4,9 @@
 
 This is the changelog for the in-progress branch for a new version of the fidelity portfolio review script. In this version, instead of relying on the Fidelity Investments rapidAPI, it will instead use the selenium webdriver to gather information directly from the website. By using Selenium to automate the browser, users can safely and easily log in to the site, and the script can easily acquire the necessary information. See the 'Ideas for Future Versions' section of the readme for planned implementations.
 
+#### 03/09/2021 08:22
+Data cleaning cells are getting there; I've now completed the cells that look for rows of the same symbol where the webscraped data doesn't match, and correct them by giving them the values of the row with the least np.nans. Might do some tidying up of the data extraction cell; it looks like it missed a few symbols. Might try to get the program so that it adjusts the index values by alphabetical order.
+
 #### 03/07/2021 20:24
 Working on data cleaning; trying to figure out the best way to deal w/ rows of duplicate symbols where some of the rows are missing the webscraped data and others are not. Working on sketching out how that will work.
 

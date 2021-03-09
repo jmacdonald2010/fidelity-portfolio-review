@@ -9,3 +9,4 @@ test_data.csv
 .DS_Store
 tests.py
 /__pycache__
+*.xlsx
