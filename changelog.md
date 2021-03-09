@@ -4,6 +4,15 @@
 
 This is the changelog for the in-progress branch for a new version of the fidelity portfolio review script. In this version, instead of relying on the Fidelity Investments rapidAPI, it will instead use the selenium webdriver to gather information directly from the website. By using Selenium to automate the browser, users can safely and easily log in to the site, and the script can easily acquire the necessary information. See the 'Ideas for Future Versions' section of the readme for planned implementations.
 
+#### 03/09/2021 09:41
+I added a while loop to the data extraction cell, as I noticed that if an error occured that caused the cell to redirect the browser to the fidelity homepage, that it would continue to the next symbol in the dataframe, which caused some issues with the integrity of the data. Adding in a while loop to only proceed with the for loop if extraction was successful (or failed three times) cleaned up the initial dataframe significantly, and rendered much of this past weekend's work unnecessary.
+
+Next steps are:
+- Add conditional formatting to the excel document using openpyxl.
+    - Add in color-coding for the extracted data columns and select other columns from the orignal CSV.
+    - Alternating gray/white for alternating symbols.
+- Some basic visualization.
+
 #### 03/09/2021 08:22
 Data cleaning cells are getting there; I've now completed the cells that look for rows of the same symbol where the webscraped data doesn't match, and correct them by giving them the values of the row with the least np.nans. Might do some tidying up of the data extraction cell; it looks like it missed a few symbols. Might try to get the program so that it adjusts the index values by alphabetical order.
 
