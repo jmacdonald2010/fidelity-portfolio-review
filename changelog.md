@@ -4,6 +4,12 @@
 
 This is the changelog for the in-progress branch for a new version of the fidelity portfolio review script. In this version, instead of relying on the Fidelity Investments rapidAPI, it will instead use the selenium webdriver to gather information directly from the website. By using Selenium to automate the browser, users can safely and easily log in to the site, and the script can easily acquire the necessary information. See the 'Ideas for Future Versions' section of the readme for planned implementations.
 
+#### 03/10/2021 22:39
+Completed my conditional formatting for the most part. I'm still running into an issue w/ the empty price target cells, but I can work with it for now, so this will be fixed in a future version. Added in a line to set where to freeze panes in the excel document, and to autosize the columns (thanks to a stack overflow user). Next step is visualization. Deleted the cells at the bottom of the notebook.
+
+Stack Overflow answer that contained the code to autosize columns (Manuel G's answer):
+https://stackoverflow.com/questions/39529662/python-automatically-adjust-width-of-an-excel-files-columns
+
 #### 03/10/2021 09:35
 Continuing with conditional formatting. Need to figure out how to not add any conditional formatting to the price target column when it is blank. Likely will need to become more familiar with excel formula syntax in order to accomplish this, but I may also be able to get around it by writing a rule instead of using CellIsRule. This will likely be the most difficult formatting to accomplish, as the remaining cells use similar syntax to the ones I've already written rules for.
 
