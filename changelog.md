@@ -4,6 +4,9 @@
 
 This is the changelog for the in-progress branch for a new version of the fidelity portfolio review script. In this version, instead of relying on the Fidelity Investments rapidAPI, it will instead use the selenium webdriver to gather information directly from the website. By using Selenium to automate the browser, users can safely and easily log in to the site, and the script can easily acquire the necessary information. See the 'Ideas for Future Versions' section of the readme for planned implementations.
 
+#### 03/11/2021 22:39
+Added in some basic visualizations. All are done using the built-in matplotlib inside of pandas. The only one that I haven't done is the interactive line chart for the price history vs. the S&P 500, which I will need to figure out Bokeh to use and also get the data from the yfinance module. Ideally, I'd also like to improve the colors and scaling of my current charts. In a future version, maybe I could compare how some of these stats change month-to-month.
+
 #### 03/10/2021 22:39
 Completed my conditional formatting for the most part. I'm still running into an issue w/ the empty price target cells, but I can work with it for now, so this will be fixed in a future version. Added in a line to set where to freeze panes in the excel document, and to autosize the columns (thanks to a stack overflow user). Next step is visualization. Deleted the cells at the bottom of the notebook.
 

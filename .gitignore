@@ -10,3 +10,4 @@ test_data.csv
 tests.py
 /__pycache__
 *.xlsx
+/misc
