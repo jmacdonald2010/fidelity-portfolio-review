@@ -1,0 +1,16 @@
+/old
+selenium_tests.ipynb
+/.vscode
+geckodriver.log
+/logs
+test_data.csv
+~$target_workbook.xlsx
+/autogen-workbooks
+.DS_Store
+tests.py
+/__pycache__
+*.xlsx
+/misc
+Stock.py
+fidelity_portfolio_review_sketches.ipynb
+target_workbook.xlsx
