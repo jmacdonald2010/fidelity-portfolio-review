@@ -4,6 +4,9 @@
 
 This is the changelog for the in-progress branch for a new version of the fidelity portfolio review script. In this version, instead of relying on the Fidelity Investments rapidAPI, it will instead use the selenium webdriver to gather information directly from the website. By using Selenium to automate the browser, users can safely and easily log in to the site, and the script can easily acquire the necessary information. See the 'Ideas for Future Versions' section of the readme for planned implementations.
 
+#### 03/13/2021 13:57
+Completed a cell that uses a Bokeh line chart to compare a given security vs. SPY over a given period of time, shown in percentage change. Going to clean up the notebook and update the readme after this commit/push and call V 0.2.0 complete.
+
 #### 03/12/2021 22:35
 Cleaned up my visualizations some by removing duplicate symbols and NaN values. Working to try to use Bokeh to visualize close prices of a given security vs. S&P 500 over a period time. Still trying to figure out Bokeh. Hoping to get that finished tomorrow. 
 
