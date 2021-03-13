@@ -16,6 +16,7 @@ This application makes use of the following:
 - Matplotlib
 - Bokeh
 - Selenium Webdriver (with Gecko Webdriver installed in system path)
+- extract.py file (contains functions that the extraction code cell uses, included in repository)
 
 ## Installation and Usage
 
