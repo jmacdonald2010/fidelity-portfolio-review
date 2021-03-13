@@ -11,3 +11,6 @@ tests.py
 /__pycache__
 *.xlsx
 /misc
+Stock.py
+fidelity_portfolio_review_sketches.ipynb
+target_workbook.xlsx
